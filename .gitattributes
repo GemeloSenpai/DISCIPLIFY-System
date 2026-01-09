@@ -1,11 +1,90 @@
+# Configuración de Git
 * text=auto eol=lf
 
+# Diferencias específicas por lenguaje
 *.blade.php diff=html
 *.css diff=css
 *.html diff=html
 *.md diff=markdown
 *.php diff=php
+*.js diff=javascript
+*.json diff=json
+*.yml diff=yaml
+*.yaml diff=yaml
+*.xml diff=xml
+*.sql diff=sql
+
+# ============================================
+# CONFIGURACIÓN GITHUB LINGUIST (IMPORTANTE)
+# ============================================
+
+# Forzar detección correcta de Blade
+*.blade.php linguist-language=Blade
+
+# PHP puro
+*.php linguist-language=PHP
+
+# JavaScript/TypeScript
+*.js linguist-language=JavaScript
+*.jsx linguist-language=JavaScript
+*.ts linguist-language=JavaScript
+*.tsx linguist-language=JavaScript
+*.vue linguist-language=JavaScript
+resources/js/** linguist-language=JavaScript
+resources/ts/** linguist-language=JavaScript
+
+# CSS/Preprocesadores
+*.css linguist-language=CSS
+*.scss linguist-language=CSS
+*.sass linguist-language=CSS
+*.less linguist-language=CSS
+resources/css/** linguist-language=CSS
+
+# Otros lenguajes importantes
+*.json linguist-language=JSON
+*.yml linguist-language=YAML
+*.yaml linguist-language=YAML
+*.xml linguist-language=XML
+*.sql linguist-language=SQL
+*.env linguist-language=Shell
+Dockerfile linguist-language=Dockerfile
+docker-compose.yml linguist-language=YAML
+
+# ============================================
+# EXCLUIR CARPETAS (NO CONTABILIZAR)
+# ============================================
+
+# Excluir dependencias y archivos generados
+/vendor/** linguist-vendored
+/node_modules/** linguist-vendored
+/public/build/** linguist-vendored
+/public/hot/** linguist-vendored
+/public/storage/** linguist-vendored
+/bootstrap/cache/** linguist-vendored
+/storage/** linguist-vendored
+
+# Excluir documentación y tests de estadísticas
+/tests/** linguist-documentation
+/docs/** linguist-documentation
+/.github/** linguist-documentation
+
+# ============================================
+# EXCLUIR DE DISTRIBUCIONES (export-ignore)
+# ============================================
 
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
+README.md export-ignore
+LICENSE.md export-ignore
+.gitattributes export-ignore
+.gitignore export-ignore
+.php-cs-fixer.dist.php export-ignore
+.phpunit.result.cache export-ignore
+composer.lock export-ignore
+package-lock.json export-ignore
+yarn.lock export-ignore
+
+# Si tienes archivos .hack, excluirlos
+*.hack linguist-vendored
+*.hh linguist-vendored
