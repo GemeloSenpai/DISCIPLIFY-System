@@ -2,74 +2,72 @@
 * text=auto eol=lf
 
 # Diferencias específicas por lenguaje
-*.blade.php diff=html
-*.css diff=css
-*.html diff=html
-*.md diff=markdown
-*.php diff=php
-*.js diff=javascript
-*.json diff=json
-*.yml diff=yaml
-*.yaml diff=yaml
-*.xml diff=xml
-*.sql diff=sql
+*.blade.php diff=html linguist-language=Blade
+*.css diff=css linguist-language=CSS
+*.html diff=html linguist-language=HTML
+*.md diff=markdown linguist-language=Markdown
+*.php diff=php linguist-language=PHP
+*.js diff=javascript linguist-language=JavaScript
+*.json diff=json linguist-language=JSON
 
 # ============================================
-# CONFIGURACIÓN GITHUB LINGUIST (IMPORTANTE)
+# REGLAS ESPECÍFICAS LINGUIST (CRÍTICO)
 # ============================================
 
-# Forzar detección correcta de Blade
+# SEPARAR Blade de PHP (ESTO ES CLAVE)
 *.blade.php linguist-language=Blade
+!*.php linguist-language=PHP
 
-# PHP puro
-*.php linguist-language=PHP
-
-# JavaScript/TypeScript
+# JavaScript moderno
 *.js linguist-language=JavaScript
 *.jsx linguist-language=JavaScript
 *.ts linguist-language=JavaScript
 *.tsx linguist-language=JavaScript
 *.vue linguist-language=JavaScript
-resources/js/** linguist-language=JavaScript
-resources/ts/** linguist-language=JavaScript
 
-# CSS/Preprocesadores
+# CSS y preprocesadores
 *.css linguist-language=CSS
 *.scss linguist-language=CSS
 *.sass linguist-language=CSS
 *.less linguist-language=CSS
-resources/css/** linguist-language=CSS
 
-# Otros lenguajes importantes
+# Otros
 *.json linguist-language=JSON
 *.yml linguist-language=YAML
 *.yaml linguist-language=YAML
 *.xml linguist-language=XML
 *.sql linguist-language=SQL
 *.env linguist-language=Shell
-Dockerfile linguist-language=Dockerfile
-docker-compose.yml linguist-language=YAML
 
 # ============================================
-# EXCLUIR CARPETAS (NO CONTABILIZAR)
+# EXCLUIR CARPETAS NO IMPORTANTES
 # ============================================
 
-# Excluir dependencias y archivos generados
-/vendor/** linguist-vendored
-/node_modules/** linguist-vendored
-/public/build/** linguist-vendored
-/public/hot/** linguist-vendored
-/public/storage/** linguist-vendored
-/bootstrap/cache/** linguist-vendored
-/storage/** linguist-vendored
+# EXCLUIR COMPLETAMENTE de las estadísticas
+vendor/** linguist-vendored
+node_modules/** linguist-vendored
+bootstrap/cache/** linguist-vendored
+storage/** linguist-vendored
+public/build/** linguist-vendored
+public/vendor/** linguist-vendored
 
-# Excluir documentación y tests de estadísticas
-/tests/** linguist-documentation
-/docs/** linguist-documentation
-/.github/** linguist-documentation
+# Contar pero como documentación
+tests/** linguist-documentation
+docs/** linguist-documentation
 
 # ============================================
-# EXCLUIR DE DISTRIBUCIONES (export-ignore)
+# FORZAR CONTEO DE ARCHIVOS JS/CSS
+# ============================================
+
+# Asegurar que se cuenten estos directorios
+resources/js/** linguist-language=JavaScript
+resources/ts/** linguist-language=JavaScript
+resources/css/** linguist-language=CSS
+public/js/** linguist-language=JavaScript
+public/css/** linguist-language=CSS
+
+# ============================================
+# EXPORT IGNORE
 # ============================================
 
 /.github export-ignore
@@ -77,14 +75,3 @@ CHANGELOG.md export-ignore
 .styleci.yml export-ignore
 README.md export-ignore
 LICENSE.md export-ignore
-.gitattributes export-ignore
-.gitignore export-ignore
-.php-cs-fixer.dist.php export-ignore
-.phpunit.result.cache export-ignore
-composer.lock export-ignore
-package-lock.json export-ignore
-yarn.lock export-ignore
-
-# Si tienes archivos .hack, excluirlos
-*.hack linguist-vendored
-*.hh linguist-vendored
