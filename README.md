@@ -87,12 +87,12 @@
 
 ---
 
-## 🏆 **Para Portfolio:**
+## 🏆 **Experiencia:**
 Este proyecto **v2.5** demuestra habilidades avanzadas en:
 - Desarrollo de sistemas complejos con lógica de negocio específica
 - Arquitectura multi-rol con permisos granularizados
 - Despliegue profesional y mantenimiento
-- Documentación visual completa con 19 capturas de pantalla
+- Documentación visual completa con 20 capturas de pantalla
 - Experiencia de usuario optimizada para diferentes dispositivos
 
 ---
