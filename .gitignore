@@ -1,0 +1,69 @@
+# ============================================
+# LARAVEL - NO SUBIR NUNCA
+# ============================================
+.env
+.env.*
+.env.backup
+.env.production
+/vendor
+/node_modules
+/public/build
+/public/hot
+/storage/*.key
+bootstrap/cache/*
+.phpunit.result.cache
+
+# ============================================
+# ARCHIVOS DE SISTEMA
+# ============================================
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+.nova
+.fleet
+.zed
+
+# ============================================
+# LOGS Y TEMPORALES
+# ============================================
+*.log
+laravel.log
+storage/logs/*.log
+storage/framework/*
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# ============================================
+# BASE DE DATOS (NO SUBIR DATOS)
+# ============================================
+*.sql
+dump.sql
+backup.sql
+database.sqlite
+
+# ============================================
+# COMPOSER/NPM
+# ============================================
+composer.phar
+/auth.json
+package-lock.json
+yarn.lock
+
+# ============================================
+# HOSTING/DESPLIEGUE
+# ============================================
+Homestead.yaml
+Homestead.json
+docker-compose.override.yml
+deploy.php
+
+# ============================================
+# SCREENSHOTS DE DESARROLLO
+# ============================================
+/screenshots-dev/
+/docs-temp/
+/planning/
+/notes.txt
+EOF

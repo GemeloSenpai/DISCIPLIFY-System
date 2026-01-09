@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Fuente local (sin CDN) */
+@import "@fontsource/nunito/400.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/700.css";
+
+/* Mejoras para móviles */
+@media (max-width: 640px) {
+    /* Ajustes de padding para pantallas pequeñas */
+    .px-4 {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    
+    /* Textos más grandes para mejor legibilidad */
+    body {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    /* Botones más grandes para touch */
+    button, .btn, [type="button"], [type="submit"] {
+        min-height: 48px;
+        padding: 12px 24px;
+    }
+    
+    /* Inputs más grandes */
+    input, textarea, select {
+        font-size: 16px !important; /* Evita zoom en iOS */
+    }
+}
+
+/* Evitar zoom en inputs en iOS */
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+    input, select, textarea {
+        font-size: 16px !important;
+    }
+}
+
+@layer components {
+  .tw-table { @apply w-full text-sm align-middle border-collapse; }
+  .tw-table thead { @apply bg-gray-50 text-gray-700; }
+  .tw-table th { @apply px-3 py-2 font-semibold text-left; }
+  .tw-table td { @apply px-3 py-2 border-b; }
+  .tw-table tr:hover { @apply bg-gray-50; }
+
+  .tw-badge { @apply inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium; }
+  .tw-badge-green { @apply bg-emerald-50 text-emerald-700; }
+  .tw-badge-slate { @apply bg-slate-50 text-slate-700; }
+
+  .tw-progress { @apply w-40 h-2 bg-slate-200 rounded-full overflow-hidden; }
+  .tw-progress > div { @apply h-full bg-indigo-600; }
+}
