@@ -1,77 +1,9 @@
-# Configuración de Git
-* text=auto eol=lf
-
-# Diferencias específicas por lenguaje
-*.blade.php diff=html linguist-language=Blade
-*.css diff=css linguist-language=CSS
-*.html diff=html linguist-language=HTML
-*.md diff=markdown linguist-language=Markdown
-*.php diff=php linguist-language=PHP
-*.js diff=javascript linguist-language=JavaScript
-*.json diff=json linguist-language=JSON
-
-# ============================================
-# REGLAS ESPECÍFICAS LINGUIST (CRÍTICO)
-# ============================================
-
-# SEPARAR Blade de PHP (ESTO ES CLAVE)
-*.blade.php linguist-language=Blade
-!*.php linguist-language=PHP
-
-# JavaScript moderno
-*.js linguist-language=JavaScript
-*.jsx linguist-language=JavaScript
-*.ts linguist-language=JavaScript
-*.tsx linguist-language=JavaScript
-*.vue linguist-language=JavaScript
-
-# CSS y preprocesadores
-*.css linguist-language=CSS
-*.scss linguist-language=CSS
-*.sass linguist-language=CSS
-*.less linguist-language=CSS
-
-# Otros
-*.json linguist-language=JSON
-*.yml linguist-language=YAML
-*.yaml linguist-language=YAML
-*.xml linguist-language=XML
-*.sql linguist-language=SQL
-*.env linguist-language=Shell
-
-# ============================================
-# EXCLUIR CARPETAS NO IMPORTANTES
-# ============================================
-
-# EXCLUIR COMPLETAMENTE de las estadísticas
-vendor/** linguist-vendored
-node_modules/** linguist-vendored
-bootstrap/cache/** linguist-vendored
-storage/** linguist-vendored
-public/build/** linguist-vendored
-public/vendor/** linguist-vendored
-
-# Contar pero como documentación
-tests/** linguist-documentation
-docs/** linguist-documentation
-
-# ============================================
-# FORZAR CONTEO DE ARCHIVOS JS/CSS
-# ============================================
-
-# Asegurar que se cuenten estos directorios
-resources/js/** linguist-language=JavaScript
-resources/ts/** linguist-language=JavaScript
-resources/css/** linguist-language=CSS
-public/js/** linguist-language=JavaScript
-public/css/** linguist-language=CSS
-
-# ============================================
-# EXPORT IGNORE
-# ============================================
+*.blade.php diff=html
+*.css diff=css
+*.html diff=html
+*.md diff=markdown
+*.php diff=php
 
 /.github export-ignore
 CHANGELOG.md export-ignore
 .styleci.yml export-ignore
-README.md export-ignore
-LICENSE.md export-ignore
